@@ -27,7 +27,11 @@ async function run() {
     await client.connect();
 
     
-
+    // post to server 1st step
+    app.post('/product',(req,res)=>{
+      const product=req.body;
+      console.log('new products',product);
+    })
 
     
     // Send a ping to confirm a successful connection
