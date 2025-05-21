@@ -1,62 +1,58 @@
-# 🛍️ Digital Brand Shop
+# 🖥️ Digital Brand Shop – Server Side
 
-**Digital Brand Shop** is a responsive, user-friendly e-commerce web application that allows users to browse and search for digital products by category, view product details, and interact with a sleek modern UI. Built using the MERN stack with Firebase for authentication.
+This is the backend of the **Digital Brand Shop**, an e-commerce application that provides a category-based product search and detail viewing experience. The backend is built using **Node.js**, **Express.js**, and **MongoDB** with **Firebase Authentication** for secure access.
 
 ## 🚀 Features
 
-- 🔍 **Category-Based Search**: Easily filter products by category to find what you need.
-- 🛒 **Product Details View**: Click on any product to see full details including description, price, and specifications.
-- 📱 **Responsive Design**: Optimized for all devices — mobile, tablet, and desktop.
-- 👥 **User-Friendly UI**: Smooth navigation with a clean and intuitive interface.
+- 🔐 Firebase-based authentication middleware
+- 🗂️ Category-based product filtering
+- 📦 Product CRUD operations
+- 🌐 RESTful API endpoints
+- 📡 Connected to MongoDB (Cloud or Local)
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Authentication**: Firebase Auth
-- **Database**: MongoDB
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB (with Mongoose)
+- **Auth**: Firebase Admin SDK
+- **Middleware**: CORS, JSON Parser, Error Handler
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-client/ # React frontend
-├── components/ # Reusable UI components
-├── pages/ # Main page views (Home, Products, etc.)
-└── App.js
-
-server/ # Node.js + Express backend
-├── models/ # MongoDB models
-├── routes/ # API routes
-└── server.js
+server/
+├── controllers/ # Logic for handling API requests
+├── models/ # Mongoose models
+├── routes/ # Express route handlers
+├── middleware/ # Custom middleware (auth, error handling)
+├── utils/ # Utility functions
+├── server.js # Main entry point
+└── .env # Environment variables
 
 bash
 Copy
 Edit
 
-## 🔧 Installation
+## ⚙️ Setup Instructions
 
-### Prerequisites
-
-- Node.js and npm
-- MongoDB
-- Firebase project
-
-### Clone the Repo
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/digital-brand-shop.git
-cd digital-brand-shop
-Backend Setup
+cd digital-brand-shop/server
+2. Install dependencies
 bash
 Copy
 Edit
-cd server
 npm install
-# Create a `.env` file and add your MongoDB URI and Firebase config
-npm run dev
-Frontend Setup
-bash
+3. Create .env file
+Create a .env file in the root of the server directory and add:
+
+env
 Copy
 Edit
-cd client
-npm install
-npm start
+PORT=5000
+MONGO_URI=your_mongodb_connection_uri
+FIREBASE_PROJECT_ID=your_firebase_project_id
+FIREBASE_CLIENT_EMAIL=your_firebase_client_email
+FIREBASE_PRIVATE_KEY=your_firebase_private_key (replace \n with real newlines)
